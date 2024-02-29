@@ -1,0 +1,34 @@
+Virtual environment using Python base installation
+--------------------------------------------------
+
+1) create a virtual environment
+python -m venv path/env-name
+
+2) remove the virtual environment
+Manually the virtual env folder
+
+Virtual environment using Conda
+-------------------------------
+conda env list
+conda create --name env-A  python=3.10
+conda activate env-A
+conda deactivate
+conda env remove --name env-A
+conda create --clone env-A  --name env-B
+conda list (to get list of packages installed in the env)
+
+
+To get the list of packages and use it for another environment
+--------------------------------------------------------------
+PIP
+----
+1) pip freeze > requirements.txt
+2) pip install -r requirements.txt
+
+Conda
+------
+1) conda env export > requirements.yml
+2) Change the name of env in line 1
+3) conda env create -f requirements.yml (creates a new specified env along with packages mentioned in requirements.yml)
+
+----------------------------------------------------------------------------------
